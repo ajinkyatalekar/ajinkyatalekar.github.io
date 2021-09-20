@@ -23,6 +23,13 @@ h2 {
     color: white;
     padding-left: 20px;
     padding-right: 20px;
+    transition: all ease 200ms;
+}
+
+h2:hover {
+  letter-spacing: 1px;
+  transition: all ease 200ms;
+  cursor: default;
 }
 
 h3 {
@@ -34,6 +41,7 @@ h3 {
     padding-left: 20px;
     padding-right: 20px;
     transition: all ease 200ms;
+    cursor: default;
 }
 
 h3:hover {
@@ -71,26 +79,24 @@ a:hover {
     position: relative;
     display: block;
     width: 17%;
-    transition: all ease 400ms;
   }
   
-  .dropdown-content {
+  #dropdown-content {
     display: none;
     position: relative;
     background-color: #2b2b2b;
     width: 400px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 5px 5px 0px;
     padding: 12px 16px;
     z-index: 1;
-    transition: all ease 400ms;
     
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-    transition: all ease 400ms;
   }
 
   .null {
       cursor:default;
+  }
+
+  .color {
+    color: #5CF670;
+    transition: all ease 200ms;
   }
