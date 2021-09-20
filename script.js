@@ -6,3 +6,7 @@ function toggleDisplay() {
       x.style.display = "block";
     }
   }
+
+function color() {
+  document.getElementById("title").style.color='blue';
+}
