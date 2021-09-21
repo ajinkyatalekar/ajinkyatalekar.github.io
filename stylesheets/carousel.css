@@ -2,11 +2,13 @@
 
 .hidden {
     display: block;
-    position:absolute;
+    position:fixed;
     width:50%;
     margin-left: 37%;
     border-radius: 4px;
     margin-top: -10%;
+    border-bottom: 2px solid #dfdfdf;
+    top: 50%;
     
   }
 
@@ -20,17 +22,16 @@
     transition: all ease-in-out 200ms;
   }
 
-  .yogahTrigger:hover > .img1 {
+  .yogahTrigger:hover ~ .img1 {
     opacity: 1;
   }
 
-  .yogahTrigger:hover > .img2 {
+  .yogahTrigger:hover ~ .img2 {
     animation-duration: 3s;
     animation-name: showw;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     transition: all ease-in-out 200ms;
-    animation-delay: 1.5s;
   }
 
   @keyframes showw {
@@ -38,11 +39,11 @@
       opacity: 0;
     }
 
-    45% {
+    55% {
       opacity: 0;
     }
 
-    55% {
+    60% {
       opacity: 1;
     }
   
