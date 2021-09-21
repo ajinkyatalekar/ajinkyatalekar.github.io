@@ -1,12 +1,8 @@
-function toggleDisplay() {
-    var x = document.getElementById("dropdown-content");
+function toggleDisplay(dropdownID) {
+    var x = document.getElementById(dropdownID);
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {
       x.style.display = "block";
     }
   }
-
-function color() {
-  document.getElementById("title").style.color='blue';
-}

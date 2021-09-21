@@ -102,74 +102,11 @@ a:hover {
     padding-bottom: 0px;
   }
 
-  /* DropDown */
-
-  .dropdown {
-    position: relative;
-    display: block;
-
-  }
-
-  .dropdown:hover h3 {
-    color: #5CF670
-  }
-  
-  #dropdown-content {
-    display: none;
-    position: relative;
-    background-color: #2b2b2b;
-    width: 600px;
-    border-radius: 0px 5px 5px 0px;
-    padding: 12px 16px;
-    z-index: 1;
-    
-  }
-
-  .null {
-      cursor:default;
-  }
-
-  .color {
-    color: #5CF670;
-    transition: all ease 200ms;
-  }
-
-.hide-mobile {
-  position: fixed;
-  width: 40%;
-  margin-left: 50%;
+.null {
+    cursor:default;
 }
 
-.show-mobile {
-  width: 100%;
-  position: fixed;
-}
-
-@keyframes reveal {
-  to {
-      stroke-dashoffset: 0;
-  }
-}
-svg path {
-  stroke-dashoffset: 240;
-  stroke-dasharray: 240;
-  animation: reveal 30s ease-in-out 0s forwards;
-}
-
-@media only screen and (max-device-width: 480px) {
-  .show-mobile {
-    display: block;
-  }
-  .hide-mobile {
-    display: none;
-  }
-}
-
-@media only screen and (min-device-width: 481px) {
-  .show-mobile {
-    display: none;
-  }
-  .hide-mobile {
-    display: block;
-  }
+.color {
+  color: #5CF670;
+  transition: all ease 200ms;
 }

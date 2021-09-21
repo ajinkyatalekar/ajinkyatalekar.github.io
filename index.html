@@ -3,8 +3,9 @@
     <title>Ajinkya Talekar - Home</title>
     <link rel="icon" href="icon_home.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="scroll.css">
+    <link rel="stylesheet" href="stylesheets/text.css">
+    <link rel="stylesheet" href="stylesheets/scroll.css">
+    <link rel="stylesheet" href="stylesheets/dropdown.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,9 +18,9 @@
   </head>
 
   <body>
-        <!--?xml version="1.0" standalone="no"?-->              <svg class="hide-mobile" id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">                    <defs>                         <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">                            <stop id="stop1" stop-color="rgba(0, 0, 0, 1)" offset="0%"></stop>                            <stop id="stop2" stop-color="rgba(31, 251, 52.739, 1)" offset="100%"></stop>                        </linearGradient>                    </defs>                <path fill="none" d="M11.1,-20.3C14.4,-17.4,17,-14.4,21,-11C24.9,-7.6,30.2,-3.8,32.9,1.5C35.5,6.8,35.5,13.7,32.9,19.3C30.2,25,24.9,29.4,19,34.2C13,39,6.5,44.1,0.4,43.5C-5.8,42.9,-11.6,36.5,-14.8,30.2C-18,23.8,-18.7,17.5,-22.4,12.5C-26.2,7.4,-33.1,3.7,-34.6,-0.9C-36.2,-5.5,-32.3,-11,-28.1,-15.2C-23.9,-19.5,-19.4,-22.6,-14.7,-24.7C-9.9,-26.7,-5,-27.7,-0.5,-26.8C3.9,-25.9,7.8,-23.2,11.1,-20.3Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="1" style="transition: all 0.3s ease 0s;" stroke="url(#sw-gradient)"></path>              </svg>
-        <!--?xml version="1.0" standalone="no"?-->              <svg class="show-mobile" id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">                    <defs>                         <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">                            <stop id="stop1" stop-color="rgba(0, 0, 0, 1)" offset="0%"></stop>                            <stop id="stop2" stop-color="rgba(31, 251, 52.739, 1)" offset="100%"></stop>                        </linearGradient>                    </defs>                <path fill="none" d="M11.1,-20.3C14.4,-17.4,17,-14.4,21,-11C24.9,-7.6,30.2,-3.8,32.9,1.5C35.5,6.8,35.5,13.7,32.9,19.3C30.2,25,24.9,29.4,19,34.2C13,39,6.5,44.1,0.4,43.5C-5.8,42.9,-11.6,36.5,-14.8,30.2C-18,23.8,-18.7,17.5,-22.4,12.5C-26.2,7.4,-33.1,3.7,-34.6,-0.9C-36.2,-5.5,-32.3,-11,-28.1,-15.2C-23.9,-19.5,-19.4,-22.6,-14.7,-24.7C-9.9,-26.7,-5,-27.7,-0.5,-26.8C3.9,-25.9,7.8,-23.2,11.1,-20.3Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="1" style="transition: all 0.3s ease 0s;" stroke="url(#sw-gradient)"></path>              </svg>
 
+  <!--  <svg class="svg-responsive" id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">                    <defs>                         <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">                            <stop id="stop1" stop-color="rgba(0, 0, 0, 1)" offset="0%"></stop>                            <stop id="stop2" stop-color="rgba(31, 251, 52.739, 1)" offset="100%"></stop>                        </linearGradient>                    </defs>                <path fill="none" d="M11.1,-20.3C14.4,-17.4,17,-14.4,21,-11C24.9,-7.6,30.2,-3.8,32.9,1.5C35.5,6.8,35.5,13.7,32.9,19.3C30.2,25,24.9,29.4,19,34.2C13,39,6.5,44.1,0.4,43.5C-5.8,42.9,-11.6,36.5,-14.8,30.2C-18,23.8,-18.7,17.5,-22.4,12.5C-26.2,7.4,-33.1,3.7,-34.6,-0.9C-36.2,-5.5,-32.3,-11,-28.1,-15.2C-23.9,-19.5,-19.4,-22.6,-14.7,-24.7C-9.9,-26.7,-5,-27.7,-0.5,-26.8C3.9,-25.9,7.8,-23.2,11.1,-20.3Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="1" style="transition: all 0.3s ease 0s;" stroke="url(#sw-gradient)"></path>              </svg>
+  ?-->
 
     <a href="index.html"><h1 id="title"><span class="color">&lt</span><span class="hid">/</span>Ajinkya Talekar<span class="color">&gt</span></a></h1>
 
@@ -33,8 +34,8 @@
         <h3><a href="about.html">About Me</a></h3>
 
         <div class="dropdown">
-          <h3><a class="null" style="cursor: pointer; user-select:none;" onclick="toggleDisplay();"> Certifications<span style="display:inline;" class="material-icons">arrow_drop_down</span></a></h3>
-        <div class="dropdown-content" id="dropdown-content">
+          <h3><a class="null" style="cursor: pointer; user-select:none;" onclick="toggleDisplay('Certification');"> Certifications<span style="display:inline;" class="material-icons">arrow_drop_down</span></a></h3>
+        <div class="dropdown-content" id="Certification">
           <h3><a target="_blank" href="https://freecodecamp.org/certification/fcc59b90040-0ca7-414e-9c6c-f0f501db4921/javascript-algorithms-and-data-structures">FreeCodeCamp // JavaScript Algorithms and Data Structures Certification</a></h3>
           <h3><a target="_blank" href="https://freecodecamp.org/certification/fcc59b90040-0ca7-414e-9c6c-f0f501db4921/scientific-computing-with-python-v7">FreeCodeCamp // Scientific Computing with Python Certification</a></h3>
         </div>
