@@ -22,6 +22,10 @@ a:hover .hid {
   color: #5CF670;
 }
 
+.title:hover {
+  color: #5CF670;
+}
+
 .hid {
   opacity: 0;
   transition: all ease 200ms;
@@ -84,7 +88,7 @@ a {
 }
 
 a:hover {
-    color: #5CF670;
+    color: #90fc9f;
     transition: all ease 400ms;
 }
 

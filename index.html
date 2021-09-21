@@ -20,7 +20,7 @@
 
   <body>
 
-    <a href="index.html"><h1 id="title"><span class="color">&lt</span><span class="hid">/</span>Ajinkya Talekar<span class="color">&gt</span></a></h1>
+    <a href="index.html" class="title"><h1 id="title"><span class="color">&lt</span><span class="hid">/</span>Ajinkya Talekar<span class="color">&gt</span></a></h1>
 
 
     <div class="linea">
@@ -29,7 +29,15 @@
     <h2><span class="color">{</span> About <span class="color">}</span></h2>
 
       <div class="lineb">
-        <h3><a href="about.html">About Me</a></h3>
+        <div class="dropdown">
+          <h3><a class="null" style="cursor: pointer; user-select:none;" onclick="toggleDisplay('about');">About Me<span style="display:inline;" class="material-icons">arrow_drop_down</span></a></h3>
+        <div class="dropdown-content" id="about" style="width:800px;">
+          <h3><a>I'm Ajinkya, an 18 year old developer from India.<br>
+          I use C++, JavaScript and Python.<br><br>
+          I made this website as my portfolio and to demonstrate my Web Developing abilities.<br><br>
+          Apart from coding, I also make EDM music and post it on YouTube.</a></h3>
+        </div>
+        </div>
 
         <div class="dropdown">
           <h3><a class="null" style="cursor: pointer; user-select:none;" onclick="toggleDisplay('Certification');"> Certifications<span style="display:inline;" class="material-icons">arrow_drop_down</span></a></h3>
@@ -46,11 +54,12 @@
     <h2><span class="color">{</span> Projects <span class="color">}</span></h2>
 
       <div class="lineb">
+      
         <div class="yogahdiv">
-        <h3><a target="_blank" href="https://yogah.github.io" class="yogahTrigger">Yogah // Website</a><img src="images/yogah1.png" class="hidden img1"><img src="images/yogah3.png" class="hidden img2"></h3>      
+        <h3><a target="_blank" href="https://yogah.github.io" class="trigger">Yogah // Website <span class="material-icons" style="vertical-align:text-middle; opacity: 0.8">gesture</span></a><img src="images/yogahgif.gif" class="img1 hidden"></h3>      
         </div>
 
-        <h3><a href="RomanNum/index.html" class="yogahTrigger">Roman Numeral Converter // JavaScript<br>Demo</a><img src="images/roman1.png" class="hidden img1"></h3>
+        <h3><a href="RomanNum/index.html" class="trigger">Roman Numeral Converter // JavaScript <br>Demo <span class="material-icons" style="vertical-align:text-middle; opacity: 0.8">gesture</span></a><img src="images/roman1.png" class="hidden img1"></h3>
       </div>
     </div>
 
