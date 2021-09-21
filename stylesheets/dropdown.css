@@ -43,17 +43,25 @@ svg path {
   animation: reveal 30s ease-in-out 0s forwards;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 1240px) {
   .svg-responsive {
     display:none;
   }
+
+  .hidden {
+    display:none;
+    
+  }
 }
 
-@media only screen and (min-device-width: 481px) {
+@media only screen and (min-device-width: 1241px) {
   .svg-responsive {
     position: fixed;
     width: 40%;
     max-height: 100%;
     margin-left: 50%;
   }
+
+
 }
+

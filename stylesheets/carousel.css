@@ -1,0 +1,54 @@
+@media only screen and (min-device-width: 1241px) {
+
+.hidden {
+    display: block;
+    position:absolute;
+    width:50%;
+    margin-left: 37%;
+    border-radius: 4px;
+    margin-top: -10%;
+    
+  }
+
+  .img2 {
+    opacity: 0;
+    transition: all ease-in-out 200ms;
+  }
+
+  .img1 {
+    opacity: 0;
+    transition: all ease-in-out 200ms;
+  }
+
+  .yogahTrigger:hover > .img1 {
+    opacity: 1;
+  }
+
+  .yogahTrigger:hover > .img2 {
+    animation-duration: 3s;
+    animation-name: showw;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: all ease-in-out 200ms;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes showw {
+    0% {
+      opacity: 0;
+    }
+
+    45% {
+      opacity: 0;
+    }
+
+    55% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+}
