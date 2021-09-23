@@ -23,11 +23,19 @@
     textarea {
         width: 30%;
     }
+
+    h1 {
+        font-size: 80px;
+    }
 }
 
 @media only screen and (max-device-width: 600px) {
     textarea {
         width: 60%;
+    }
+
+    h1 {
+        font-size: 70px;
     }
 }
 
@@ -59,7 +67,6 @@ body {
 
 h1 {
     
-    font-size: 80px;
     font-family: 'Ubuntu', sans-serif;
     color: #82EBFF;
     letter-spacing: 3px;
