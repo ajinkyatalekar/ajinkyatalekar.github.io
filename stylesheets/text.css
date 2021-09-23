@@ -1,10 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
 body {
     font-family: 'Ubuntu', sans-serif;
-    /* background-color: #0E0E0E; */
     padding-top: 20px;
+    background-color: #0E0E0E;
     background-image: url('../images/2.svg');
     background-attachment: fixed;
     /* background by SVGBackgrounds.com */
+}
+
+@media only screen and (max-device-width: 1240px) {
+  body {
+    background-size: 300%;
+  }
+}
+
+@media only screen and (min-device-width: 1241px) {
+  body {
+    background-size: 100%;
+  }
 }
 
 .title:hover {
@@ -24,7 +39,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family:'Quicksand',sans-serif;
   font-size: 40px;
   text-decoration: none;
   font-weight: 300;
@@ -56,7 +71,7 @@ color: #5CF670;
 }
 
 h3 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family:'Quicksand',sans-serif;
   font-size: 30px;
   text-decoration: none;
   font-weight: 300;
@@ -65,6 +80,7 @@ h3 {
   padding-right: 20px;
   transition: all ease 200ms;
   cursor: default;
+
 }
 
 h3:hover {
@@ -86,15 +102,15 @@ a {
   color: white;
 }
 
+a:hover {
+  color: #90fc9f;
+  transition: all ease 400ms;
+}
+
 a:hover .hid {
   opacity: 1;
   transition: all ease 200ms;
   color: #5CF670;
-}
-
-a:hover {
-    color: #90fc9f;
-    transition: all ease 400ms;
 }
 
 /* LINES */
@@ -133,4 +149,44 @@ a:hover {
 .color {
   color: #5CF670;
   transition: all ease 200ms;
+}
+
+/* ICONS */
+.icon {
+  vertical-align: center;
+  position:relative;
+  top: 4px;
+  transition: all ease 200ms;
+  height: 32px;
+}
+
+a:hover .icon {
+  top: 0px;
+  transition: all ease 200ms;
+}
+
+#button {
+  padding : 10px;
+  font-size: 20px;
+  border: 2px dashed #5f5f5f;
+  transition: all ease 200ms;
+  background-color: #4f5d9c4d;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  position: absolute;
+  right: 30px;
+  max-width: 30%;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 0.5;
+}
+
+#button:hover {
+  cursor: pointer ;
+  background-color: #2a32574d;
+  border: 2px dashed #474747;
+  color: rgba(255, 255, 255, 0.568);
+}
+
+#button:active {
+  background-color: #9fbce72d;
 }
