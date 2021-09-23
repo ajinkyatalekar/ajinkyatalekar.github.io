@@ -12,7 +12,8 @@
 .dropdown-content {
   display: none;
   position: relative;
-  background-image: url('../images/box.svg');
+  /* background-image: url('../images/box.svg'); */
+  background-color: #262626;
   background-attachment: fixed;
   
   border-radius: 0px 5px 5px 0px;
