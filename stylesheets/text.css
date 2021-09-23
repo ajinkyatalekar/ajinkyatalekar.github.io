@@ -1,7 +1,14 @@
 body {
     font-family: 'Ubuntu', sans-serif;
-    background-color: #0E0E0E;
+    /* background-color: #0E0E0E; */
     padding-top: 20px;
+    background-image: url('../images/2.svg');
+    background-attachment: fixed;
+    /* background by SVGBackgrounds.com */
+}
+
+.title:hover {
+  color: #5CF670;
 }
 
 h1 {
@@ -16,14 +23,61 @@ h1 {
     content:'';
 }
 
-a:hover .hid {
-  opacity: 1;
+h2 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 40px;
+  text-decoration: none;
+  font-weight: 300;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
   transition: all ease 200ms;
-  color: #5CF670;
 }
 
-.title:hover {
+.one:hover h2 {
+letter-spacing: 1px;
+transition: all ease 200ms;
+cursor: default;
+color: #5CF670;
+}
+
+.two:hover h2 {
+letter-spacing: 1px;
+transition: all ease 200ms;
+cursor: default;
+color: #5CF670;
+}
+
+.three:hover h2 {
+letter-spacing: 1px;
+transition: all ease 200ms;
+cursor: default;
+color: #5CF670;
+}
+
+h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 30px;
+  text-decoration: none;
+  font-weight: 300;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: all ease 200ms;
+  cursor: default;
+}
+
+h3:hover {
   color: #5CF670;
+  transition: all ease 400ms;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: all ease 200ms;
+  -webkit-tap-highlight-color: transparent;
+
 }
 
 .hid {
@@ -32,59 +86,10 @@ a:hover .hid {
   color: white;
 }
 
-h2 {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 40px;
-    text-decoration: none;
-    font-weight: 300;
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    transition: all ease 200ms;
-}
-
-.one:hover h2 {
-  letter-spacing: 1px;
+a:hover .hid {
+  opacity: 1;
   transition: all ease 200ms;
-  cursor: default;
   color: #5CF670;
-}
-
-.two:hover h2 {
-  letter-spacing: 1px;
-  transition: all ease 200ms;
-  cursor: default;
-  color: #5CF670;
-}
-
-.three:hover h2 {
-  letter-spacing: 1px;
-  transition: all ease 200ms;
-  cursor: default;
-  color: #5CF670;
-}
-
-h3 {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 30px;
-    text-decoration: none;
-    font-weight: 300;
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    transition: all ease 200ms;
-    cursor: default;
-}
-
-h3:hover {
-    color: #5CF670;
-    transition: all ease 400ms;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-    transition: all ease 200ms;
 }
 
 a:hover {
@@ -92,21 +97,37 @@ a:hover {
     transition: all ease 400ms;
 }
 
-.linea {
+/* LINES */
+@media only screen and (min-device-width: 801px) {
+  .linea {
     border-left: 2px solid #B9B9B9;
     margin-left: 60px;
     padding-top: 0px;
     padding-bottom: 0px;
   }
+
 .lineb {
     border-left: 2px solid #5CF670;
     margin-left: 60px;
     padding-top: 0px;
     padding-bottom: 0px;
   }
+}
 
-.null {
-    cursor:default;
+@media only screen and (max-device-width: 800px) {
+  .linea {
+    border-left: 2px solid #B9B9B9;
+    margin-left: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+.lineb {
+    border-left: 2px solid #5CF670;
+    margin-left: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 }
 
 .color {

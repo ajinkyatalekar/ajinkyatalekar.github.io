@@ -12,7 +12,8 @@
 .dropdown-content {
   display: none;
   position: relative;
-  background-color: #2b2b2b;
+  background-image: url('../images/box.svg');
+  background-attachment: fixed;
   
   border-radius: 0px 5px 5px 0px;
   /* border: 2px dashed rgba(255, 255, 255, 0.397); */
@@ -39,48 +40,3 @@
     width: 80%;
   }
 }
-
-/* SVG */
-
-.hide-mobile {
-  position: fixed;
-  width: 40%;
-  margin-left: 50%;
-}
-
-.show-mobile {
-  width: 100%;
-  position: fixed;
-}
-
-@keyframes reveal {
-  to {
-      stroke-dashoffset: 0;
-  }
-}
-svg path {
-  stroke-dashoffset: 240;
-  stroke-dasharray: 240;
-  animation: reveal 30s ease-in-out 0s forwards;
-}
-
-@media only screen and (max-device-width: 1240px) {
-  .svg-responsive {
-    display:none;
-  }
-
-  .hidden {
-    display:none;
-    
-  }
-}
-
-@media only screen and (min-device-width: 1241px) {
-  .svg-responsive {
-    position: fixed;
-    width: 40%;
-    max-height: 100%;
-    margin-left: 50%;
-  }
-}
-

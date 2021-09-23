@@ -19,9 +19,16 @@
     background: #82EBFF;
   }
 
-textarea {
+@media only screen and (min-device-width: 601px) {
+    textarea {
+        width: 30%;
+    }
+}
 
-    width: 30%;
+@media only screen and (max-device-width: 600px) {
+    textarea {
+        width: 60%;
+    }
 }
 
 .area {
