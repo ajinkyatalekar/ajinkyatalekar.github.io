@@ -13,12 +13,31 @@
   display: none;
   position: relative;
   background-color: #2b2b2b;
-  width: 600px;
+  
   border-radius: 0px 5px 5px 0px;
   /* border: 2px dashed rgba(255, 255, 255, 0.397); */
   border-left: 0px;
   padding: 12px 16px;
   z-index: 1;
+}
+
+
+@media only screen and (min-device-width: 1241px) {
+  .dropdown-content {
+  width: 600px;
+  }
+  #about {
+    width: 800px;
+  }
+}
+
+@media only screen and (max-device-width: 1240px) {
+  .dropdown-content {
+  width: 80%;
+  }
+  #about {
+    width: 80%;
+  }
 }
 
 /* SVG */
