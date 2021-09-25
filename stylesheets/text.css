@@ -49,21 +49,7 @@ h2 {
   transition: all ease 200ms;
 }
 
-.one:hover h2 {
-letter-spacing: 1px;
-transition: all ease 200ms;
-cursor: default;
-color: #5CF670;
-}
-
-.two:hover h2 {
-letter-spacing: 1px;
-transition: all ease 200ms;
-cursor: default;
-color: #5CF670;
-}
-
-.three:hover h2 {
+.secTitle:hover h2 {
 letter-spacing: 1px;
 transition: all ease 200ms;
 cursor: default;
