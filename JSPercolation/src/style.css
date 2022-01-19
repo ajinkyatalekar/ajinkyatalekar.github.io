@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    cursor: pointer;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(27, 27, 27);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: lightblue;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: lightskyblue;
+  }
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    color: white;
+    background-color: rgb(27, 27, 27);
+    padding-top: 20px;
+
+}
+
+#button {
+    padding : 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    /* margin-right: 5px;
+    margin-left: 5px; */
+    font-size: 30px;
+    border: 1.5px solid #5cf670;
+    transition: all ease 200ms;
+    background-color: #262626;
+    color: #5cf670;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #5cf670;
+    color: #262626;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+#button:hover {
+    color: #262626;
+    transition: all ease 200ms;
+    cursor: pointer;
+box-shadow: 11px 10px 20px 1px rgba(0,0,0,0.67);
+-webkit-box-shadow: 11px 10px 20px 1px rgba(0,0,0,0.67);
+-moz-box-shadow: 11px 10px 20px 1px rgba(0,0,0,0.67);
+} 
+
+textarea {
+    background-color: #262626;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    border: 2px solid rgb(207, 207, 207);
+    outline: none;
+    height: 40px;
+    resize: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+textarea::placeholder {
+    color: rgb(207, 207, 207);
+}
+
+h1 {
+    font-size: 60px;
+    text-decoration: none;
+    font-weight: 400;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: all ease 200ms;
+    content: "";
+
+}
+
+h1:hover {
+    color: #5cf670;
+    cursor: default;
+    user-select: none;
+
+}
+
+
+#canvas {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(46, 46, 46);
+    display: inline;
+    box-shadow: 4px 3px 14px 1px rgba(0,0,0,0.52);
+-webkit-box-shadow: 4px 3px 14px 1px rgba(0,0,0,0.52);
+-moz-box-shadow: 4px 3px 14px 1px rgba(0,0,0,0.52);
+}
+
+#output {
+    visibility:hidden;
+    cursor:default;
+    user-select: none;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+a {
+  text-decoration: none;
+  color: #b8ffc2;
+  transition: all ease 200ms;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:hover {
+  transition: all ease 200ms;
+  color: #5cf670;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
