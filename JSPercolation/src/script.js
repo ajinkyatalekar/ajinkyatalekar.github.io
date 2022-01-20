@@ -77,6 +77,9 @@ class Visualizer {
                 if (this.p.open(row, col)) {
                     this.paintSite(row, col, "open");
                 }
+
+                var lastRow = row;
+                var lastCol = col;
             }
 
             for (var i = 0; i < this.n; i++) {
@@ -85,6 +88,7 @@ class Visualizer {
 
             console.log(this.p.numberOfOpenSites());
             document.getElementById("output").value = this.p.numberOfOpenSites() + " sites opened";
+            // document.getElementById("output").value += "\n(" + (lastRow+1) + ", " + (lastCol+1) + ") opened last";
         }
     }
 

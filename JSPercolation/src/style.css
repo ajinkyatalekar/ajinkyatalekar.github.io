@@ -125,6 +125,7 @@ h1 {
 #output {
     visibility:hidden;
     cursor:default;
+    /* height: 200%; */
 }
 
 #output:hover {
