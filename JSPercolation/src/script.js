@@ -17,7 +17,7 @@ function main() {
         // window.scrollTo(0 , window.innerHeight*0.45);
         // document.getElementById("button").scrollIntoView();
         if (window.innerWidth >= 1240) {
-            window.scroll(0,findPos(document.getElementById("button"))-15);
+            window.scroll(0,findPos(document.getElementById("canvas"))-15);
         } else {
             window.scroll(0,findPos(document.getElementById("size"))-15);
         }

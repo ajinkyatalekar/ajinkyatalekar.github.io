@@ -203,3 +203,10 @@ p {
   line-height: 40px;
 }
 
+#size {
+  color:#5cf670
+}
+
+#size::placeholder {
+  color:#b4ffbe
+}
