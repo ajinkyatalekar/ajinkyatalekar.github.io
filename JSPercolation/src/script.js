@@ -1,12 +1,30 @@
 function main() {
     n = parseInt(document.getElementById("size").value);
     // t = parseInt(document.getElementById("trials").value);
-    if (n > 0) {
+    if (n > 0 && n < 1401) {
         m = new Visualizer(n, 1);
         m.run();
-    document.getElementById("output").style.visibility = "visible";
+        // window.scrollTo(0 , window.innerHeight*0.45);
+        // document.getElementById("button").scrollIntoView();
+        window.scroll(0,findPos(document.getElementById("button"))-15);
     }
 
+    else {
+        document.getElementById("output").value = "INVALID INPUT";
+    }
+
+    document.getElementById("output").style.visibility = "visible";
+    
+}
+
+function findPos(obj) {
+    var curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+    return [curtop];
+    }
 }
 
 class Visualizer {
@@ -23,7 +41,7 @@ class Visualizer {
     constructor(n, t) {
         this.canvas = document.getElementById("canvas");
         this.c = this.canvas.getContext("2d");
-        var x = Math.min(window.innerHeight*0.7, window.innerWidth*0.7)
+        var x = Math.min(window.innerHeight*0.75, window.innerWidth*0.8)
         this.c.canvas.width = x;
         this.c.canvas.height = x;
 
