@@ -79,7 +79,7 @@ textarea::placeholder {
 h1 {
     font-size: 80px;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 200;
     color: white;
     padding-left: 20px;
     padding-right: 20px;
@@ -153,6 +153,53 @@ p {
     font-family: 'Montserrat', sans-serif;
 }
 
-.green {
-  color: #5cf670;
+.highlight {
+  color:#ffffff;
+  font-weight: 400;
+  background-color:#1b1b1b;
+  padding-left: 4px;
+  padding-right : 4px;
+  border-radius: 2px;
 }
+
+.trigger {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#hidden {
+  visibility: hidden;
+  display:none;
+  font-size: 20px;
+  text-align: left;
+}
+
+@media only screen and (max-device-width: 1240px) {
+  #hidden {
+    font-size: 15px;
+  }
+}
+
+#working {
+  background-color: #262626;
+  padding: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
+  user-select:none;
+  border-radius: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media only screen and (max-device-width: 1240px) {
+  #working {
+    padding-left: 4%;
+    padding-right : 4%;
+  }
+}
+
+
+.para {
+  line-height: 40px;
+}
+

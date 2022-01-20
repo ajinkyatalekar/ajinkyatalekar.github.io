@@ -1,3 +1,13 @@
+function toggleVisibility() {
+    if (document.getElementById("hidden").style.visibility == "visible") {
+        document.getElementById("hidden").style.visibility = "hidden";
+        document.getElementById("hidden").style.display = "none";
+    } else {
+        document.getElementById("hidden").style.visibility = "visible";
+        document.getElementById("hidden").style.display = "block";
+    }
+}
+
 function main() {
     n = parseInt(document.getElementById("size").value);
     // t = parseInt(document.getElementById("trials").value);

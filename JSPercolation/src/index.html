@@ -4,6 +4,7 @@
     <title>Percolation Visualizer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body align="center">
@@ -15,7 +16,25 @@
         <button onclick="main()" type="button" id="button">Run</button><br><br>
         <canvas id="canvas" height="0" width="0"></canvas><br><br>
         <textarea id="output" placeholder="Output" align="center"></textarea><br><br>
-        <p>Check out GitHub Repo - <a target="_blank" href="https://github.com/ajinkyatalekar/percolation-visualizer">Percolation Visualizer</a></p>
+        
+        <div class="footer">
+            <div id="working">
+                <p><a onclick="toggleVisibility()" class="trigger">How it works<span style="display:inline; vertical-align:text-top;" class="material-icons">arrow_drop_down</span></a></p>
+                <div id="hidden">
+                    <p class="para">1. It generates a grid of <span class="highlight">n * n</span> elements.
+                        Each site represents a space that can be occupied by water. The system is said to 'percolate' 
+                        if a site at the top is connected to a site at the bottom.<br>
+                        2. Till the system percolates, a site is opened at random throughout the grid. This is when
+                        water is able to flow from top to bottom through the open sites.</p>
+                    <p class="para">How its coded:<br>
+                        I used weighted union-find to store the site data in an array, and connected each site
+                        to their neighbor when they are opened.<br>
+                        See the GitHub Repo for more info and a Java version in which you can paint sites to open.</p>
+                </div>
+            </div>
+            
+            <p>Check out GitHub Repo - <a target="_blank" href="https://github.com/ajinkyatalekar/percolation-visualizer">Percolation Visualizer</a></p>
+        </div>
     </div>
 </body>
 
