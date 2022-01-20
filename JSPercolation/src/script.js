@@ -16,7 +16,11 @@ function main() {
         m.run();
         // window.scrollTo(0 , window.innerHeight*0.45);
         // document.getElementById("button").scrollIntoView();
-        window.scroll(0,findPos(document.getElementById("button"))-15);
+        if (window.innerWidth >= 1240) {
+            window.scroll(0,findPos(document.getElementById("button"))-15);
+        } else {
+            window.scroll(0,findPos(document.getElementById("size"))-15);
+        }
     }
 
     else {
