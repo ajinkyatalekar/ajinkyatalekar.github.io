@@ -12,11 +12,23 @@
 
     <div id="vis">
         <textarea id="size" placeholder="Size (2 - 1400)" align="center"></textarea><br><br>
+
+        <span class="line">
+           Animate?
+        <label class="switch">
+        <input type="checkbox" onclick="toggleRealTime()">
+        <span class="slider">
+        </span>
+        </label>
+    </span>
+        <br><br><br>
+
         <canvas id="canvas" height="0" width="0"></canvas><br><br>
         <!-- <textarea id="trials"></textarea> -->
-        <textarea id="output" placeholder="Output" align="center"></textarea><br><br>
-        <button onclick="main()" type="button" id="button">Run</button><br><br>
+        <textarea id="output" placeholder="Output" align="center" readonly="true"></textarea><br><br>
+        <button onclick="toggleRun()" type="button" id="button">Run</button><br><br>
         
+
         <div class="footer">
             <div id="working">
                 <p><a onclick="toggleVisibility()" class="trigger">How it works<span style="display:inline; vertical-align:text-top;" class="material-icons">arrow_drop_down</span></a></p>

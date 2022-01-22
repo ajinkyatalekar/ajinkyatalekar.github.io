@@ -1,3 +1,6 @@
+var realTime = false;
+var running = false;
+
 function toggleVisibility() {
     if (document.getElementById("hidden").style.visibility == "visible") {
         document.getElementById("hidden").style.visibility = "hidden";
@@ -8,27 +11,22 @@ function toggleVisibility() {
     }
 }
 
-function main() {
-    n = parseInt(document.getElementById("size").value);
-    // t = parseInt(document.getElementById("trials").value);
-    if (n > 0 && n < 1401) {
-        m = new Visualizer(n, 1);
-        m.run();
-        // window.scrollTo(0 , window.innerHeight*0.45);
-        // document.getElementById("button").scrollIntoView();
-        if (window.innerWidth >= 1240) {
-            window.scroll(0,findPos(document.getElementById("canvas"))-15);
-        } else {
-            window.scroll(0,findPos(document.getElementById("size"))-15);
-        }
-    }
+function toggleRealTime() {
+    if (!realTime)
+        realTime = true;
+    else
+        realTime = false;
+}
 
-    else {
-        document.getElementById("output").value = "INVALID INPUT";
+function toggleRun() {
+    if (running) {
+        document.getElementById("button").innerHTML = "Run";
+        running = false;
+    } else {
+        document.getElementById("button").innerHTML = "Stop";
+        running = true;
+        main();
     }
-
-    document.getElementById("output").style.visibility = "visible";
-    
 }
 
 function findPos(obj) {
@@ -39,6 +37,20 @@ function findPos(obj) {
         } while (obj = obj.offsetParent);
     return [curtop];
     }
+}
+
+function main() {
+    n = parseInt(document.getElementById("size").value);
+    if (n > 0 && n < 1401) {
+
+        m = new Visualizer(n, 1);
+        m.run();
+    }
+
+    else {
+        document.getElementById("output").value = "INVALID INPUT";
+    }
+
 }
 
 class Visualizer {
@@ -64,6 +76,11 @@ class Visualizer {
         this.canvasSize = this.canvas.clientWidth;
         this.siteSize = this.canvasSize/n;
 
+        if (window.innerWidth >= 1240) {
+            window.scroll(0,findPos(document.getElementById("canvas"))-15);
+        } else {
+            window.scroll(0,findPos(document.getElementById("size"))-15);
+        }
 
         if (n < 600) {
             this.buffer = 0.4;
@@ -84,26 +101,54 @@ class Visualizer {
 
             this.p = new Percolation(n);
             
-            while(!this.p.isPercolating) {
+            if (realTime) {
+                this.loop();
+            }
+                
+            if (!realTime) {
+                toggleRun();
+                while (!this.p.isPercolating) {
+                    this.loop();
+                }
+
+                for (var i = 0; i < this.n; i++) {
+                    this.flow(0, i);
+                }
+            }
+
+            console.log(this.p.numberOfOpenSites());
+            // document.getElementById("output").value += "\n(" + (lastRow+1) + ", " + (lastCol+1) + ") opened last";
+        }
+    }
+
+    loop() {
                 var row = Math.floor(Math.random() * this.n);
                 var col = Math.floor(Math.random() * this.n);
 
                 if (this.p.open(row, col)) {
                     this.paintSite(row, col, "open");
+
+                    if (realTime) {
+                        this.flow(row, col);
+                    }
                 }
 
                 var lastRow = row;
                 var lastCol = col;
-            }
 
-            for (var i = 0; i < this.n; i++) {
-                this.flow(0, i);
-            }
-
-            console.log(this.p.numberOfOpenSites());
             document.getElementById("output").value = this.p.numberOfOpenSites() + " sites opened";
-            // document.getElementById("output").value += "\n(" + (lastRow+1) + ", " + (lastCol+1) + ") opened last";
+
+        if (running && realTime) {
+            if (!this.p.isPercolating) {
+                    setTimeout(()=> {
+                        this.loop();
+                    }, 20)
+            } else {
+                toggleRun();
+            }
         }
+
+    document.getElementById("output").style.visibility = "visible";
     }
 
     paintSite(row, col, type) {
