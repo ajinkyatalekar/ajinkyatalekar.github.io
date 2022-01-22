@@ -12,10 +12,17 @@ function toggleVisibility() {
 }
 
 function toggleRealTime() {
-    if (!realTime)
-        realTime = true;
-    else
-        realTime = false;
+    if (!running) {
+        if (!realTime)
+            realTime = true;
+        else
+            realTime = false;
+    } else {
+        if (!realTime)
+            document.getElementById("toggleSwitch").checked = false;
+        else
+            document.getElementById("toggleSwitch").checked = true;
+    }
 }
 
 function toggleRun() {
@@ -40,6 +47,8 @@ function findPos(obj) {
 }
 
 function main() {
+    document.getElementById("output").style.visibility = "visible";
+
     n = parseInt(document.getElementById("size").value);
     if (n > 0 && n < 1401) {
 
@@ -49,6 +58,7 @@ function main() {
 
     else {
         document.getElementById("output").value = "INVALID INPUT";
+        toggleRun();
     }
 
 }
@@ -63,6 +73,7 @@ class Visualizer {
     buffer;
     siteDrawn;
     p;
+    sleep;
 
     constructor(n, t) {
         this.canvas = document.getElementById("canvas");
@@ -76,11 +87,20 @@ class Visualizer {
         this.canvasSize = this.canvas.clientWidth;
         this.siteSize = this.canvasSize/n;
 
-        if (window.innerWidth >= 1240) {
-            window.scroll(0,findPos(document.getElementById("canvas"))-15);
+
+        if (n>10) {
+            this.sleep = 20000/(n*n*n);
+            // this.sleep = 10000 / (0.59 * n * n);
         } else {
-            window.scroll(0,findPos(document.getElementById("size"))-15);
+            this.sleep = 40;
         }
+
+        // if (window.innerWidth >= 1240) {
+        //     window.scroll(0,findPos(document.getElementById("canvas"))-15);
+        // } else {
+        //     window.scroll(0,findPos(document.getElementById("size"))-15);
+        // }
+            window.scroll(0,findPos(document.getElementById("size"))-15);
 
         if (n < 600) {
             this.buffer = 0.4;
@@ -92,6 +112,11 @@ class Visualizer {
 
         for (var i = 0; i < n*n; i++) {
             this.siteDrawn[i] = false;
+        }
+
+        if (realTime && n>200) {
+            realTime=false;
+            document.getElementById("toggleSwitch").checked = false;
         }
     }
 
@@ -116,8 +141,6 @@ class Visualizer {
                 }
             }
 
-            console.log(this.p.numberOfOpenSites());
-            // document.getElementById("output").value += "\n(" + (lastRow+1) + ", " + (lastCol+1) + ") opened last";
         }
     }
 
@@ -142,13 +165,12 @@ class Visualizer {
             if (!this.p.isPercolating) {
                     setTimeout(()=> {
                         this.loop();
-                    }, 20)
+                    }, this.sleep)
             } else {
                 toggleRun();
             }
         }
 
-    document.getElementById("output").style.visibility = "visible";
     }
 
     paintSite(row, col, type) {

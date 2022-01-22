@@ -36,13 +36,16 @@ body {
     /* margin-right: 5px;
     margin-left: 5px; */
     font-size: 30px;
-    border: 1.5px solid #5cf670;
+    border: 2px solid #5cf670;
     transition: all ease 200ms;
     color: #5cf670;
     font-family: 'Ubuntu', sans-serif;
     background-color: #5cf670;
     color: #262626;
     font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+    height: 64px;
     
 }
 
@@ -70,6 +73,8 @@ textarea {
     resize: none;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 textarea::placeholder {
@@ -204,19 +209,20 @@ p {
 }
 
 #size {
-  color:#5cf670
+  color:#5cf670;
+  width: 200px;
 }
 
 #size::placeholder {
-  color:#b4ffbe
+  color:#b4ffbe;
 }
 
 /* Toggle Switch */
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 56px;
+  height: 30px;
 }
 
 /* Hide default HTML checkbox */
@@ -242,8 +248,8 @@ p {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 22px;
+  width: 22px;
   left: 4px;
   bottom: 4px;
   background-color: #262626;
@@ -266,11 +272,17 @@ input:checked + .slider:before {
 }
 
 .line {
-    height:      40px;  
   line-height: 35px; /* Same as height  */
   font-size: 25px;
     border: 2px solid rgb(207, 207, 207);
     padding: 15px;
     background-color: #262626;
     font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px;
+}
+
+.green {
+  color: #5cf670
 }

@@ -11,22 +11,24 @@
     <h1 align="center">Percolation Visualizer</h1><br><br>
 
     <div id="vis">
-        <textarea id="size" placeholder="Size (2 - 1400)" align="center"></textarea><br><br>
+        <textarea id="size" placeholder="Size (2 - 1400)" align="center"></textarea>
 
         <span class="line">
-           Animate?
-        <label class="switch">
-        <input type="checkbox" onclick="toggleRealTime()">
-        <span class="slider">
+            Animate?
+            <label class="switch">
+                <input type="checkbox" onclick="toggleRealTime()" id="toggleSwitch">
+                    <span class="slider">
+                </span>
+            </label>
         </span>
-        </label>
-    </span>
-        <br><br><br>
+
+        <button onclick="toggleRun()" type="button" id="button">Run</button>
+        <br><br>
 
         <canvas id="canvas" height="0" width="0"></canvas><br><br>
         <!-- <textarea id="trials"></textarea> -->
-        <textarea id="output" placeholder="Output" align="center" readonly="true"></textarea><br><br>
-        <button onclick="toggleRun()" type="button" id="button">Run</button><br><br>
+        <textarea id="output" placeholder="Output" align="center" readonly="true"></textarea>
+        <br><br>
         
 
         <div class="footer">
