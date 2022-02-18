@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <title>Wordle Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="main()" align="center">
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close"></span>
+            <h1 style="color: black; font-size: 30px;"><span id="imp">&lt;/</span> How it works <span id="imp">&gt;</span></h1>
+            <p>1: Click <span id="imp">"Next Word"</span>, and copy the word to Wordle.</p>
+            <p>2: Click on the lettered boxes to change their type to unused (grey), wrong position (yellow) or correct (green).</p>
+            <p>3: Once done, click <span id="imp">"Next Word"</span> again and repeat the process till you find the correct word.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1><span onclick="main()">Wordle Bot <span onclick="main()" title="Refresh"><img src="refresh2.svg" height="25px"></span> <span id="popupBtn" title="Help"><img src="question.svg" height="20px"></span></h1>
+        
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="0" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="1" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="2" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="3" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="4" class="txt"></textarea>
+        <br>
+
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="5" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="6" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="7" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="8" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="9" class="txt"></textarea><br>
+        
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="10" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="11" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="12" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="13" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="14" class="txt"></textarea><br>
+
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="15" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="16" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="17" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="18" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="19" class="txt"></textarea><br>
+
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="20" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="21" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="22" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="23" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="24" class="txt"></textarea><br>
+
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="25" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="26" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="27" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="28" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="29" class="txt"></textarea><br>
+
+        <br>
+        <button onclick="nextStep()" type="button" id="button">Next Word</button>
+    </div>
+</body>
+<script src="words.js"></script>
+<script src="misc.js"></script>
+<script src="script.js"></script>
+</html>

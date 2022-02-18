@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap');
+
+body {
+    background-color: #121213;
+    touch-action: manipulation;
+}   
+
+#copy {
+    vertical-align: center;
+}
+
+textarea {
+    background-color: #121213;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    border: 2px solid #3a3a3c;
+    outline: none;
+    height: 40px;
+    width: 40px;
+    resize: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0px;
+    margin: 0.5px;
+    user-select: none;
+    transition: all ease 0.2s;
+}
+
+#button {
+    padding : 10px;
+    font-size: 25px;
+    border: 2px solid #5cf670;
+    transition: all ease 200ms;
+    color: #5cf670;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #5cf670;
+    color: #262626;
+    font-family: 'Montserrat', sans-serif;
+    height: 64px;
+    width: 202px;
+}
+
+#button:hover {
+    color: white;
+    transition: all ease 200ms;
+    cursor: pointer;
+    box-shadow: 11px 10px 20px 1px rgba(0,0,0,0.67);
+}
+
+.container {
+    margin: 50px;
+}
+
+h1 {
+    font-size: 40px;
+    text-decoration: none;
+    font-weight: 800;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: all ease 200ms;
+    content: "";
+    font-family: 'Montserrat', sans-serif;
+    cursor: default;
+}
+
+h1:hover {
+    color: #5cf670;
+}
+
+p {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 400;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img {
+    vertical-align:middle ;
+    display: inline;
+    cursor: pointer;
+    opacity: 50%;
+    transition: all ease 0.2s;
+    padding: 5px;
+}
+
+img:hover {
+    opacity: 100%;
+}
+
+#imp {
+    color: #39af49;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  border-radius:5px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+/* Add Animation */
+@keyframes animateoff {
+  from {top: -300px; opacity: 1}
+  to {top: 0; opacity: 0}
+}
+
+@media only screen and (max-device-width: 1240px) {
+    body {
+        zoom: 2;
+    }
+    p {
+        font-size: 12px;
+    }
+}
+
