@@ -9,22 +9,58 @@ var boxes;
 var boxesState;
 var current; // int
 
+var step;
+var changeMeter;
+
 function main() {
     boxes = document.getElementsByClassName("txt");
     boxesState = [];
     current = 0;
+
+    step = 0;
+    changeMeter = 0;
+    
     for (var i = 0; i < boxes.length; i++) {
         boxes[i].style.backgroundColor = idleColor;
         boxes[i].style.borderColor = unusedColor;
         boxes[i].value = "";
         boxesState[i] = -1;
         boxes[i].addEventListener('mousedown', function(e){ e.preventDefault(); }, false);
+        boxes[i].style.cursor = "default";
     }
 
-    // nextStep();
+}
+
+function showDoodle1() {
+    var doodle1 = document.getElementsByClassName("doodle1");
+    doodle1[0].style.opacity = '100%';
+
+    var doodle2 = document.getElementsByClassName("doodle2");
+    doodle2[0].style.opacity = '0%';
+    doodle2[1].style.opacity = '0%';
 }
 
 function nextStep() {
+    step += 1;
+    if (step == 1) {
+        var doodle2 = document.getElementsByClassName("doodle2");
+        doodle2[0].style.opacity = '100%';
+        doodle2[1].style.opacity = '100%';
+        
+        var doodle1 = document.getElementsByClassName("doodle1");
+        doodle1[0].style.opacity = '0%';
+
+        var text1 = document.getElementsByClassName("text1");
+    } else {
+        var doodle2 = document.getElementsByClassName("doodle2");
+        doodle2[0].style.opacity = '0%';
+        doodle2[1].style.opacity = '0%';
+        var doodle1 = document.getElementsByClassName("doodle1");
+        doodle1[0].style.opacity = '0%';
+    }
+
+    // doodle1[0].style.display = 'none';
+
     var cw;
 
     if (current != 0) {
@@ -50,6 +86,7 @@ function nextStep() {
         boxes[i].style.backgroundColor = unusedColor;
         boxes[i].style.borderColor = unusedColor;
         boxes[i].value=cw[i - 5*current].toUpperCase();
+        boxes[i].style.cursor = "pointer";
 
         if (current > 0) {
             if (boxesState[i-5] == 2) {
@@ -57,6 +94,7 @@ function nextStep() {
                 boxes[i].style.backgroundColor = correctColor;
                 boxes[i].style.borderColor = correctColor;
             }
+        boxes[i-5].style.cursor = "default";
         }
     }
     current++;
@@ -218,6 +256,16 @@ function nextStep() {
     }
 
 function switcher(ele) {
+
+    if (boxesState[parseInt(ele.id)] >= 0) {
+        changeMeter++;
+    }
+
+    if (changeMeter == 1) {
+        var doodle1 = document.getElementsByClassName("doodle1");
+        doodle1[0].style.opacity = '100%';
+    }
+
     var id = ele.id;
     if (parseInt(id) >= (current-1)*5 && parseInt(id) < ((current-1)*5 + 5)) {
         if (boxesState[id] == 0) {

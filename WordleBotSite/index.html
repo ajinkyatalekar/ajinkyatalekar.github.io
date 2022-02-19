@@ -10,7 +10,7 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close"></span>
+            <span class="close">&times;</span>
             <h1 style="color: black; font-size: 30px;"><span id="imp">&lt;/</span> How it works <span id="imp">&gt;</span></h1>
             <p>1: Click <span id="imp">"Next Word"</span>, and copy the word to Wordle.</p>
             <p>2: Click on the lettered boxes to change their type to unused (grey), wrong position (yellow) or correct (green).</p>
@@ -19,20 +19,23 @@
     </div>
 
     <div class="container">
-        <h1><span onclick="main()">Wordle Bot <span onclick="main()" title="Refresh"><img src="refresh2.svg" height="25px"></span> <span id="popupBtn" title="Help"><img src="question.svg" height="20px"></span></h1>
+        <h1>Wordle Bot <span onclick="main(); showDoodle1()" title="Refresh"><img src="refresh2.svg" height="25px" class="button"></span> <span id="popupBtn" title="Help"><img src="question.svg" height="20px" class="button"></span></h1>
         
         <textarea readonly maxlength="1" onclick="switcher(this)" id="0" class="txt"></textarea>
         <textarea readonly maxlength="1" onclick="switcher(this)" id="1" class="txt"></textarea>
         <textarea readonly maxlength="1" onclick="switcher(this)" id="2" class="txt"></textarea>
         <textarea readonly maxlength="1" onclick="switcher(this)" id="3" class="txt"></textarea>
         <textarea readonly maxlength="1" onclick="switcher(this)" id="4" class="txt"></textarea>
+        <span class="doodle doodle2"><img src="arrow2.png" class="invert arrow" style="transform: scaleY(1); transform: rotateZ(180deg); height: 30px;"></span>
         <br>
 
         <textarea readonly maxlength="1" onclick="switcher(this)" id="5" class="txt"></textarea>
         <textarea readonly maxlength="1" onclick="switcher(this)" id="6" class="txt"></textarea>
         <textarea readonly maxlength="1" onclick="switcher(this)" id="7" class="txt"></textarea>
         <textarea readonly maxlength="1" onclick="switcher(this)" id="8" class="txt"></textarea>
-        <textarea readonly maxlength="1" onclick="switcher(this)" id="9" class="txt"></textarea><br>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="9" class="txt"></textarea>
+        <span class="doodle doodle2" style="margin-left: 10px;"><span class="doodleText doodleTextVer">Edit</span></span>
+        <br>
         
         <textarea readonly maxlength="1" onclick="switcher(this)" id="10" class="txt"></textarea>
         <textarea readonly maxlength="1" onclick="switcher(this)" id="11" class="txt"></textarea>
@@ -59,7 +62,7 @@
         <textarea readonly maxlength="1" onclick="switcher(this)" id="29" class="txt"></textarea><br>
 
         <br>
-        <button onclick="nextStep()" type="button" id="button">Next Word</button>
+        <button onclick="nextStep()" type="button" id="button">Next Word</button><span class="doodle doodle1"><img src="rightArrow.png" class="invert arrow"><span class="doodleText text1">Click</span></span>
     </div>
 </body>
 <script src="words.js"></script>
