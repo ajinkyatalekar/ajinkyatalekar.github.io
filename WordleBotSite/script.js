@@ -8,7 +8,7 @@ var wrongColor = "#db4949";
 var boxes;
 var boxesState;
 var current; // int
-var fast = true;
+var fast;
 
 var step;
 var changeMeter;
@@ -17,6 +17,7 @@ function main() {
     boxes = document.getElementsByClassName("txt");
     boxesState = [];
     current = 0;
+    fast = true;
 
     step = 0;
     changeMeter = 0;
@@ -68,7 +69,7 @@ function nextStep() {
 
     if (current != 0) {
         newWord();
-        if (fast = true) {
+        if (fast == true) {
             cw = getWordFast();
         } else {
             cw = getWord();
