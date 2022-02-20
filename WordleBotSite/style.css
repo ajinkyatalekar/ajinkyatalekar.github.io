@@ -77,7 +77,35 @@ sup {
     margin-bottom: 10px;
 }
 
-textarea {
+.usableBox {
+    background-color: #121213;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    border: 0px solid #3a3a3c;
+    outline: none;
+    height: 384px;
+    width: 340px;
+    resize: none;
+    text-align:center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: default;
+    border-radius: 0px;
+    margin: 0.5px;
+    user-select: none;
+    transition: all ease 0.2s;
+    /* overflow: hidden; */
+        /* overflow: scroll; */
+    overflow-x: hidden;
+    
+    /* background: -webkit-linear-gradient(#eee, rgba(255, 255, 255, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent);
+}
+
+.txt {
     background-color: #121213;
     padding: 10px;
     font-size: 30px;
@@ -142,10 +170,10 @@ h1:hover {
 p {
     font-size: 20px;
     text-decoration: none;
-    font-weight: 100;
-    color: black;
+    font-weight: 300;
+    color: white;
     font-family: 'Montserrat', sans-serif;
-    font-family: 'Ubuntu', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
 }
 
 .button {
@@ -162,7 +190,7 @@ img:hover {
 }
 
 #imp {
-    color: #39af49;
+    color: #5cf670;
 }
 
 /* The Modal (background) */
@@ -176,23 +204,26 @@ img:hover {
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.486); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #222222;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  padding: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
   width: 80%; /* Could be more or less, depending on screen size */
   animation-name: animatetop;
   animation-duration: 0.4s;
-  border-radius:5px;
+  border-radius:3px;
+  color: white;
 }
 
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: rgb(122, 122, 122);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -209,8 +240,8 @@ img:hover {
 
 /* Add Animation */
 @keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
+  from {opacity: 0}
+  to {opacity: 1}
 }
 
 /* Add Animation */

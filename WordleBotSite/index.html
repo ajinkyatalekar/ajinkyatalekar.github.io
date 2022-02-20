@@ -2,6 +2,7 @@
 <head>
     <title>Wordle Bot</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scroll.css">
 </head>
 <body onload="main()" align="center">
 
@@ -11,14 +12,19 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h1 style="color: black; font-size: 30px;"><span id="imp">&lt;/</span> How it works <span id="imp">&gt;</span></h1>
+            <h1 style="font-size: 30px;"><span id="imp">&lt;/</span> How it works <span id="imp">&gt;</span></h1>
             <p>1: Click <span id="imp">"Next Word"</span>, and copy the word to Wordle.</p>
             <p>2: Click on the lettered boxes to change their type to unused (grey), wrong position (yellow) or correct (green).</p>
             <p>3: Once done, click <span id="imp">"Next Word"</span> again and repeat the process till you find the correct word.</p>
         </div>
     </div>
 
-    <div class="container">
+    <span class="grid">
+
+    <span>
+    <span class="container">
+        <textarea readonly class="usableBox" style="margin-top: 70px; position: absolute; left: 1000px; top: 59px; display: none;"></textarea>
+        
         <h1>Wordle Bot <span onclick="main(); showDoodle1()" title="Refresh"><img src="refresh2.svg" height="25px" class="button"></span> <span id="popupBtn" title="Help"><img src="question.svg" height="20px" class="button"></span></h1>
         
         <textarea readonly maxlength="1" onclick="switcher(this)" id="0" class="txt"></textarea>
@@ -63,7 +69,13 @@
 
         <br>
         <button onclick="nextStep()" type="button" id="button">Next Word</button><span class="doodle doodle1"><img src="rightArrow.png" class="invert arrow"><span class="doodleText text1">Click</span></span>
-    </div>
+    </span><br>
+
+    </span>
+
+    
+    </span>
+
 </body>
 <script src="words.js"></script>
 <script src="misc.js"></script>

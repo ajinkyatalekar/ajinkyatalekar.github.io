@@ -2501,4 +2501,4 @@ youth
 yummy
 zones`
 
-var words = wordsList.split("\n");
+var wordsBase = wordsList.split("\n");

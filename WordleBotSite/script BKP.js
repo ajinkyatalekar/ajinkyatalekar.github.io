@@ -8,7 +8,6 @@ var wrongColor = "#db4949";
 var boxes;
 var boxesState;
 var current; // int
-var fast = true;
 
 var step;
 var changeMeter;
@@ -29,8 +28,6 @@ function main() {
         boxes[i].addEventListener('mousedown', function(e){ e.preventDefault(); }, false);
         boxes[i].style.cursor = "default";
     }
-    var box = document.getElementsByClassName("usableBox")[0];
-    box.value = "";
 
 }
 
@@ -68,14 +65,10 @@ function nextStep() {
 
     if (current != 0) {
         newWord();
-        if (fast = true) {
-            cw = getWordFast();
-        } else {
-            cw = getWord();
-        }
+        cw = getWord();
     } else {
         wordleMain();
-        cw = "crate";
+        cw = getWord();
     }
 
     if (cw == null) {
@@ -85,7 +78,6 @@ function nextStep() {
             boxes[i].style.borderColor = wrongColor;
             boxes[i].value=cw[i - 5*current].toUpperCase();
         }
-        console.log(words);
         return;
     }
     
@@ -107,6 +99,7 @@ function nextStep() {
     }
     current++;
 
+    console.log(cw)
 }
 
     var words; // String array
@@ -119,7 +112,6 @@ function nextStep() {
         conf = [];
         confNon = [];
         confHalf = [];
-        words = wordsBase.slice();
     }
 
     function newWord() {
@@ -154,7 +146,7 @@ function nextStep() {
         }
     }
 
-    function validateWord(cw, confNon, confHalf, conf) {
+    function validateWord(cw) {
         for (var i = 0; i < 5; i++) {
             var c = cw[i];
 
@@ -196,104 +188,12 @@ function nextStep() {
 
     function getWord() {
         var favourableWord;
-        var maxInfo = 0;
-        var wordsTemp = words.slice();
-
-        for (var i = 0; i < words.length; i++) {
-            var cw = words[i];
-
-            if (validateWord(cw, confNon, confHalf, conf)) {
-                var info = 0;
-
-                for (var a = 0; a < 3; a++) {
-                    for (var b = 0; b < 3; b++) {
-                        for (var c = 0; c < 3; c++) {
-                            for (var d = 0; d < 3; d++) {
-                                for (var e = 0; e < 3; e++) {
-                                    var probability = 0;
-                                    var localInfo = 0;
-                                    var tempConfNon = confNon.slice();
-                                    var tempConfHalf = confHalf.slice();
-                                    var tempConf = conf.slice();
-
-                                    for (var j = 0; j < 5; j++) {
-                                        var currentChar;
-                                        if (j == 0)
-                                            currentChar = a;
-                                        if (j == 1)
-                                            currentChar = b;
-                                        if (j == 2)
-                                            currentChar = c;
-                                        if (j == 3)
-                                            currentChar = d;
-                                        if (j == 4)
-                                            currentChar = e;
-
-                                        if (currentChar == 0) { 1
-                                            tempConfNon.push(cw[j]);
-                                        } else if (currentChar == 1) {
-
-                                            var contains = -1;
-                                            for (var j = 0; j < tempConfHalf.length; j++) {
-                                                if (tempConfHalf[j].character == c) {
-                                                    contains = j;
-                                                    break;
-                                                }
-                                            }
-                                            if (contains != -1) {
-                                                tempConfHalf[contains].indexes.push(j);
-                                            } else {
-                                                tempConfHalf.push({character: cw[j], indexes: [j]});
-                                            }
-
-                                        } else if (currentChar == 2) {
-                                            tempConf[j] = cw[j];
-                                        }
-                                    }
-
-                                    // Process all cases here
-                                    for (var wordNo = 0; wordNo < words.length; wordNo++) {
-                                        if (validateWord(words[wordNo], tempConfNon, tempConfHalf, tempConf)) {
-                                            probability++;
-                                        }
-                                    }
-
-                                    probability *= 1000;
-                                    probability /= words.length;
-                                    if (probability != 0) {
-                                        localInfo = Math.log2(1/probability);
-                                    }
-
-                                    info += probability * localInfo;
-                                    info = 0;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (info >= maxInfo) {
-                    maxInfo = info;
-                    favourableWord = cw;
-                }
-            } else {
-                wordsTemp.splice(i, 1);
-            }
-        }
-
-        words = wordsTemp.slice();
-        return favourableWord;
-    }
-    
-    function getWordFast() {
-        var favourableWord;
-        var usableWords = [];
         var favourableFreq = 0.0;
     
         for (var i = 0; i < words.length; i++) {
             var cw = words[i];
 
-            if (validateWord(cw, confNon, confHalf, conf)) {
+            if (validateWord(cw)) {
                 var tempFreq = 0;
 
                 for (var j = 0; j < 5; j++) {
@@ -308,39 +208,16 @@ function nextStep() {
                         }
                     }
 
-                }
-
-                for (var l = 0; l < usableWords.length; l++) {
-                    if (tempFreq >= usableWords[l].info) {
-                        usableWords.splice(l, 0, {word: cw, info: tempFreq});
-                        break;
+                    if (tempFreq > favourableFreq) {
+                        favourableFreq = tempFreq;
+                        favourableWord = cw;
                     }
-
-                }
-
-                if (usableWords.length == 0) {
-                    usableWords.push({word: cw, info: tempFreq});
-                }
-                
-                if (tempFreq > favourableFreq) {
-                    favourableFreq = tempFreq;
-                    favourableWord = cw;
                 }
             }
         }
 
-        var box = document.getElementsByClassName("usableBox")[0];
-        box.value = "";
-
-        for (var word = 0; word < usableWords.length; word++) {
-            box.value += usableWords[word].word.toUpperCase() + "\n";
-        }
-
-        console.log()
-
         return favourableWord;
     }
-
 
     // Frequency of all letters in the alphabet
     function getFreq(c) {
