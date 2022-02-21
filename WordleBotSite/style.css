@@ -125,7 +125,7 @@ sup {
     transition: all ease 0.2s;
 }
 
-#button {
+.buttonRun {
     padding : 10px;
     font-size: 25px;
     border: 2px solid #5cf670;
@@ -139,13 +139,23 @@ sup {
     width: 202px;
 }
 
-#button:hover {
+.buttonRun:hover {
     color: white;
     transition: all ease 200ms;
     cursor: pointer;
     box-shadow: 11px 10px 20px 1px rgba(0,0,0,0.67);
 }
 
+.btnDiff {
+    padding : 10px;
+    font-size: 25px;
+    border: 2px solid #3b3b3b;
+    background-color: #1b1b1b;
+    color: #8b8b8b;
+    font-family: 'Montserrat', sans-serif;
+    width: 250px;
+    margin: 10px;
+}
 .container {
     margin: 50px;
 }

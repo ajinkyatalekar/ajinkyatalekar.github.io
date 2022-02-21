@@ -22,7 +22,6 @@
     <span class="grid">
 
     <span>
-    <span class="container">
         <textarea readonly class="usableBox" style="margin-top: 70px; position: absolute; left: 1000px; top: 59px; display: none;"></textarea>
         
         <h1>Wordle Bot <span onclick="main(); showDoodle1()" title="Refresh"><img src="refresh2.svg" height="25px" class="button"></span> <span id="popupBtn" title="Help"><img src="question.svg" height="20px" class="button"></span></h1>
@@ -68,8 +67,10 @@
         <textarea readonly maxlength="1" onclick="switcher(this)" id="29" class="txt"></textarea><br>
 
         <br>
-        <button onclick="nextStep()" type="button" id="button">Next Word</button><span class="doodle doodle1"><img src="rightArrow.png" class="invert arrow"><span class="doodleText text1">Click</span></span>
-    </span><br>
+        <button onclick="nextStep()" type="button" class="buttonRun">Next Word</button><span class="doodle doodle1"><img src="rightArrow.png" class="invert arrow"><span class="doodleText text1">Click</span></span>
+        <br>
+        <button onclick="changeWord()" type="button" class="buttonRun btnDiff">Change Word</button>
+    <br>
 
     </span>
 

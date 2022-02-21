@@ -76,6 +76,7 @@ function nextStep() {
         }
     } else {
         wordleMain();
+        cw = getWordFast();
         cw = "crate";
     }
 
@@ -115,11 +116,15 @@ function nextStep() {
     var conf; // String array
     var confNon; //String array
     var confHalf; // Letter array
+    var usableWords;
+    var usableWordsCurrent;
 
     function wordleMain() {
         conf = [];
         confNon = [];
         confHalf = [];
+        usableWords = [];
+        usableWordsCurrent = 0;
         words = wordsBase.slice();
     }
 
@@ -288,8 +293,9 @@ function nextStep() {
     
     function getWordFast() {
         var favourableWord;
-        var usableWords = [];
         var favourableFreq = 0.0;
+        usableWords = [];
+        usableWordsCurrent = 1;
     
         for (var i = 0; i < words.length; i++) {
             var cw = words[i];
@@ -340,6 +346,37 @@ function nextStep() {
         console.log()
 
         return favourableWord;
+    }
+
+    function changeWord() {
+        var cw;
+        if (usableWordsCurrent < usableWords.length) {
+            cw = usableWords[usableWordsCurrent].word;
+        }
+        if (cw == null) {
+            return;
+        }
+
+        console.log(cw)
+        
+        for (var i = 5*(current-1); i < 5*(current-1) + 5; i++) {
+            boxesState[i] = 0;
+            boxes[i].style.backgroundColor = unusedColor;
+            boxes[i].style.borderColor = unusedColor;
+            boxes[i].value=cw[i - 5*(current-1)].toUpperCase();
+            boxes[i].style.cursor = "pointer";
+
+            if (current > 1) {
+                if (boxesState[i-5] == 2) {
+                    boxesState[i] = 2;
+                    boxes[i].style.backgroundColor = correctColor;
+                    boxes[i].style.borderColor = correctColor;
+                }
+            boxes[i-5].style.cursor = "default";
+            }
+        }
+    
+        usableWordsCurrent++;
     }
 
 
