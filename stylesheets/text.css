@@ -22,10 +22,6 @@ body {
   }
 }
 
-.title:hover {
-  color: #5cf670;
-}
-
 h1 {
   font-family: "Ubuntu", sans-serif;
   font-size: 60px;
