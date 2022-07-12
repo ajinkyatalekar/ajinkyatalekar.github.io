@@ -57,7 +57,7 @@ function main() {
     }
 
     else {
-        document.getElementById("output").value = "INVALID INPUT";
+        document.getElementById("output").value = "Enter Valid Size";
         toggleRun();
     }
 
