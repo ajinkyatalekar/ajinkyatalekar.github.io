@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <title>Wordle Solver</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scroll.css">
+</head>
+<body onload="main()" align="center">
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1 style="font-size: 30px;"><span id="imp">&lt;/</span> How it works <span id="imp">&gt;</span></h1>
+            <p>1: Click <span id="imp">"Next Word"</span>, and copy the word to Wordle.</p>
+            <p>2: Click on the lettered boxes to change their type to unused (grey), wrong position (yellow) or correct (green).</p>
+            <p>3: Once done, click <span id="imp">"Next Word"</span> again and repeat the process till you find the correct word.</p>
+        </div>
+    </div>
+
+    <span class="grid">
+
+    <span>
+        <textarea readonly class="usableBox" style="margin-top: 70px; position: absolute; left: 1000px; top: 59px; display: none;"></textarea>
+        
+        <h1>Wordle Bot <span onclick="main(); showDoodle1()" title="Refresh"><img src="refresh2.svg" height="25px" class="button"></span> <span id="popupBtn" title="Help"><img src="question.svg" height="20px" class="button"></span></h1>
+        
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="0" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="1" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="2" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="3" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="4" class="txt"></textarea>
+        <span class="doodle doodle2"><img src="arrow2.png" class="invert arrow" style="transform: scaleY(1); transform: rotateZ(180deg); height: 30px;"></span>
+        <br>
+
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="5" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="6" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="7" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="8" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="9" class="txt"></textarea>
+        <span class="doodle doodle2" style="margin-left: 10px;"><span class="doodleText doodleTextVer">Edit</span></span>
+        <br>
+        
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="10" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="11" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="12" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="13" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="14" class="txt"></textarea><br>
+
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="15" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="16" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="17" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="18" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="19" class="txt"></textarea><br>
+
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="20" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="21" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="22" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="23" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="24" class="txt"></textarea><br>
+
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="25" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="26" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="27" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="28" class="txt"></textarea>
+        <textarea readonly maxlength="1" onclick="switcher(this)" id="29" class="txt"></textarea><br>
+
+        <br>
+        <button onclick="nextStep()" type="button" class="buttonRun">Next Word</button><span class="doodle doodle1"><img src="rightArrow.png" class="invert arrow"><span class="doodleText text1">Click</span></span>
+        <br>
+        <button onclick="changeWord()" type="button" class="buttonRun btnDiff">Change Word</button>
+    <br>
+
+    </span>
+
+    
+    </span>
+
+</body>
+<script src="words.js"></script>
+<script src="misc.js"></script>
+<script src="script.js"></script>
+</html>
